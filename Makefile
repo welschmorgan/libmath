@@ -6,7 +6,7 @@
 #    By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/11 05:27:36 by mwelsch           #+#    #+#              #
-#    Updated: 2013/12/20 07:18:16 by mwelsch          ###   ########.fr        #
+#    Updated: 2013/12/20 07:29:58 by mwelsch          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,7 +27,10 @@ CFLAGS = -Wall -Wextra -Werror -g -ansi -pedantic
 LDFLAGS =
 CC = clang
 LNK = ar rcs
-all: $(NAME)
+all: $(NAME) test_unit
+
+test_unit:
+	make -C test_unit
 
 $(NAME): $(LIBFT_BIN) $(OBJS)
 	$(LNK) $(NAME) $^ $(LDFLAGS)
