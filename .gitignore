@@ -1,0 +1,5 @@
+obj/*.o
+obj/debug/*.o
+obj/release/*.o
+libmath.a
+libmath_d.a
