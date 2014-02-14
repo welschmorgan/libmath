@@ -6,7 +6,7 @@
 #    By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 14:02:18 by mwelsch           #+#    #+#              #
-#    Updated: 2013/12/28 07:08:05 by mwelsch          ###   ########.fr        #
+#    Updated: 2014/02/14 23:28:13 by mwelsch          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -54,32 +54,36 @@ debug: $(TARGET_D)
 release: $(TARGET)
 
 $(TARGET): $(OBJS) $(LIBFT_LIB)
+	@printf "\r\033[KLinking $@\n"
 	@$(AR) $@ $^
 
 $(TARGET_D): $(OBJS_D) $(LIBFT_LIB_D)
+	@printf "\r\033[KLinking $@\n"
 	@$(AR) $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@printf "\r\033[KCompiling $<"
 	@$(CC) -c -o $@ $<
 
 $(OBJ_DIR_D)/%.o: $(SRC_DIR)/%.c
+	@printf "\r\033[KCompiling $<"
 	@$(CC_D) -c -o $@ $<
 
 $(LIBFT_LIB):
-	make release -C $(LIBFT_DIR)
+	@make release -s -C $(LIBFT_DIR)
 
 $(LIBFT_LIB_D):
-	make debug -C $(LIBFT_DIR)
+	@make debug -s -C $(LIBFT_DIR)
 
 clean:
 	@$(RM) $(OBJS)
 	@$(RM) $(OBJS_D)
-	make clean -C $(LIBFT_DIR)
+	@make clean -s -C $(LIBFT_DIR)
 
 fclean : clean
 	@$(RM) $(TARGET)
 	@$(RM) $(TARGET_D)
-	make fclean -C $(LIBFT_DIR)
+	@make fclean -s -C $(LIBFT_DIR)
 
 re: fclean all
 

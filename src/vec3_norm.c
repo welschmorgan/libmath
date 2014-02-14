@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmath_config.h                                   :+:      :+:    :+:   */
+/*   vec3_norm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/20 06:14:09 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/14 23:27:25 by mwelsch          ###   ########.fr       */
+/*   Created: 2014/02/13 07:08:38 by mwelsch           #+#    #+#             */
+/*   Updated: 2014/02/13 07:24:45 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBMATH_CONFIG
-# define LIBMATH_CONFIG
+#include "libmath.h"
+#include <math.h>
 
-# if !defined (REAL_DEFINED)
-#  if defined(USE_DOUBLE_PRECISION) || defined(DOUBLE_PRECISION)
-typedef double		t_real;
-#  else
-typedef float		t_real;
-#  endif
-#  define REAL_DEFINED
-# endif
+t_real					vec3_norm(t_vec3 *v)
+{
+	t_real				l;
 
-#endif /* !LIBMATH_CONFIG */
+	l = vec3_length(*v);
+	if (l)
+		*v = vec3_scale(*v, 1.0f / l);
+	return (l);
+}

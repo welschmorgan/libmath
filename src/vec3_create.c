@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmath_config.h                                   :+:      :+:    :+:   */
+/*   vec3_create.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/20 06:14:09 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/14 23:27:25 by mwelsch          ###   ########.fr       */
+/*   Created: 2014/02/13 12:58:21 by mwelsch           #+#    #+#             */
+/*   Updated: 2014/02/13 12:59:22 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBMATH_CONFIG
-# define LIBMATH_CONFIG
 
-# if !defined (REAL_DEFINED)
-#  if defined(USE_DOUBLE_PRECISION) || defined(DOUBLE_PRECISION)
-typedef double		t_real;
-#  else
-typedef float		t_real;
-#  endif
-#  define REAL_DEFINED
-# endif
+#include "libmath.h"
 
-#endif /* !LIBMATH_CONFIG */
+t_vec3					vec3_create(t_real x, t_real y, t_real z)
+{
+	t_vec3				v;
+
+	v.x = x;
+	v.y = y;
+	v.z = z;
+	return (v);
+}

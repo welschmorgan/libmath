@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmath_config.h                                   :+:      :+:    :+:   */
+/*   libmath_vec2.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/20 06:14:09 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/14 23:27:25 by mwelsch          ###   ########.fr       */
+/*   Created: 2014/02/14 23:05:31 by mwelsch           #+#    #+#             */
+/*   Updated: 2014/02/14 23:09:17 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBMATH_CONFIG
-# define LIBMATH_CONFIG
+#ifndef LIBMATH_VEC2_H
+# define LIBMATH_VEC2_H
 
-# if !defined (REAL_DEFINED)
-#  if defined(USE_DOUBLE_PRECISION) || defined(DOUBLE_PRECISION)
-typedef double		t_real;
-#  else
-typedef float		t_real;
-#  endif
-#  define REAL_DEFINED
-# endif
+typedef struct			s_vec2
+{
+	t_real				x;
+	t_real				y;
+}						t_vec2;
 
-#endif /* !LIBMATH_CONFIG */
+t_vec2					vec2_create(t_real x, t_real y);
+
+#endif /* !LIBMATH_VEC2_H */

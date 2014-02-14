@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmath_config.h                                   :+:      :+:    :+:   */
+/*   ray_create.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/20 06:14:09 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/14 23:27:25 by mwelsch          ###   ########.fr       */
+/*   Created: 2014/02/13 09:04:02 by mwelsch           #+#    #+#             */
+/*   Updated: 2014/02/14 23:17:04 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBMATH_CONFIG
-# define LIBMATH_CONFIG
+#include "libmath_ray.h"
 
-# if !defined (REAL_DEFINED)
-#  if defined(USE_DOUBLE_PRECISION) || defined(DOUBLE_PRECISION)
-typedef double		t_real;
-#  else
-typedef float		t_real;
-#  endif
-#  define REAL_DEFINED
-# endif
+t_ray					ray_create(t_vec3 origin, t_vec3 end)
+{
+	t_ray				r;
 
-#endif /* !LIBMATH_CONFIG */
+	r.origin = origin;
+	r.direction = vec3_sub(end, origin);
+	return (r);
+}

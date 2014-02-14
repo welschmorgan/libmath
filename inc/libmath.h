@@ -6,7 +6,7 @@
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 05:02:09 by mwelsch           #+#    #+#             */
-/*   Updated: 2013/12/20 07:15:50 by mwelsch          ###   ########.fr       */
+/*   Updated: 2014/02/14 23:17:32 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libmath_config.h"
 # include "libmath_utils.h"
 # include "libmath_vec3.h"
-
-t_real			ft_fast_sqrt(t_real number);
+# include "libmath_vec2.h"
+# include "libmath_ray.h"
 
 #endif /* !LIBMATH_H */

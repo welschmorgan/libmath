@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmath_config.h                                   :+:      :+:    :+:   */
+/*   libmath_ray.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/20 06:14:09 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/14 23:27:25 by mwelsch          ###   ########.fr       */
+/*   Created: 2014/02/14 23:05:53 by mwelsch           #+#    #+#             */
+/*   Updated: 2014/02/14 23:22:40 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBMATH_CONFIG
-# define LIBMATH_CONFIG
+#ifndef LIBMATH_RAY_H
+# define LIBMATH_RAY_H
 
-# if !defined (REAL_DEFINED)
-#  if defined(USE_DOUBLE_PRECISION) || defined(DOUBLE_PRECISION)
-typedef double		t_real;
-#  else
-typedef float		t_real;
-#  endif
-#  define REAL_DEFINED
-# endif
+# include <libmath_vec3.h>
 
-#endif /* !LIBMATH_CONFIG */
+typedef struct			s_ray
+{
+	t_vec3				origin;
+	t_vec3				direction;
+}						t_ray;
+
+typedef struct			s_ray_result
+{
+	int			hit;
+	t_ray		ray;
+	t_real		distance;
+}						t_ray_result;
+
+t_ray					ray_create(t_vec3 origin, t_vec3 dir);
+t_ray_result			ray_result_create(int hit, t_ray ray, t_real dist);
+
+#endif /* !LIBMATH_RAY_H */
