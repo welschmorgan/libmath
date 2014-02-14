@@ -6,7 +6,7 @@
 #    By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 14:02:18 by mwelsch           #+#    #+#              #
-#    Updated: 2014/02/14 23:28:13 by mwelsch          ###   ########.fr        #
+#    Updated: 2014/02/15 00:03:36 by mwelsch          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -78,12 +78,10 @@ $(LIBFT_LIB_D):
 clean:
 	@$(RM) $(OBJS)
 	@$(RM) $(OBJS_D)
-	@make clean -s -C $(LIBFT_DIR)
 
 fclean : clean
 	@$(RM) $(TARGET)
 	@$(RM) $(TARGET_D)
-	@make fclean -s -C $(LIBFT_DIR)
 
 re: fclean all
 
