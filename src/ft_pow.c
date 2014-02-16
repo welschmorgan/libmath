@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmath_utils.h                                    :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/20 07:12:52 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/16 12:40:03 by mwelsch          ###   ########.fr       */
+/*   Created: 2014/02/16 12:36:42 by mwelsch           #+#    #+#             */
+/*   Updated: 2014/02/16 12:39:48 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBMATH_UTILS_H
-# define LIBMATH_UTILS_H
 
-# include "libmath_config.h"
+#include <libmath_utils.h>
 
-t_real		ft_fabs(t_real number);
-t_real		ft_abs(t_real nbr);
-t_real		ft_clamp(t_real number, t_real min, t_real max);
-t_real		ft_fast_sqrt(t_real number);
-t_real		ft_sqrt(t_real number);
-t_real		ft_pow(t_real num, unsigned int pow);
+t_real			ft_pow(t_real num, unsigned int pow)
+{
+	t_real		r;
 
-#endif /* !LIBMATH_UTILS_H */
+	r = 1;
+	while (pow && pow--)
+		r *= num;
+	return (r);
+}

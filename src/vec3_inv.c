@@ -1,24 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmath_utils.h                                    :+:      :+:    :+:   */
+/*   vec3_inv.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/20 07:12:52 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/16 12:40:03 by mwelsch          ###   ########.fr       */
+/*   Created: 2014/02/16 14:09:54 by mwelsch           #+#    #+#             */
+/*   Updated: 2014/02/16 14:10:43 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBMATH_UTILS_H
-# define LIBMATH_UTILS_H
+#include "libmath_vec3.h"
 
-# include "libmath_config.h"
-
-t_real		ft_fabs(t_real number);
-t_real		ft_abs(t_real nbr);
-t_real		ft_clamp(t_real number, t_real min, t_real max);
-t_real		ft_fast_sqrt(t_real number);
-t_real		ft_sqrt(t_real number);
-t_real		ft_pow(t_real num, unsigned int pow);
-
-#endif /* !LIBMATH_UTILS_H */
+t_vec3		vec3_inv(t_vec3 v)
+{
+	return (vec3_scale(v, -1.0f));
+}
