@@ -6,7 +6,7 @@
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/16 08:28:00 by mwelsch           #+#    #+#             */
-/*   Updated: 2013/12/16 09:42:53 by mwelsch          ###   ########.fr       */
+/*   Updated: 2014/02/16 11:23:19 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libmath.h"
@@ -20,12 +20,12 @@ t_real	ft_sqrt(t_real number)
 
 	x2 = number * 0.5f;
 	y = number;
-	i = * (long *)&y;
+	i = *(long*)&y;
 	i = 0x5f3759df - (i >> 1);
-	y = *(t_real *)&i;
+	y = *(t_real*)&i;
 	y = y * (three_h - (x2 * y * y));
 	y = y * (three_h - (x2 * y * y));
 	y = y * (three_h - (x2 * y * y));
 
-	return (1.0f/y);
+	return (1.0f / y);
 }

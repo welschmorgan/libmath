@@ -6,15 +6,12 @@
 #    By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 14:02:18 by mwelsch           #+#    #+#              #
-#    Updated: 2014/02/15 00:03:36 by mwelsch          ###   ########.fr        #
+#    Updated: 2014/02/16 11:30:02 by mwelsch          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME = libmath
-NAME_D = $(NAME)_d
-EXT = a
-TARGET = $(NAME).$(EXT)
-TARGET_D = $(NAME_D).$(EXT)
+NAME = libmath.a
+NAME_D = libmath_d.a
 
 LIBFT_NAME = libft
 LIBFT_NAME_D = libft_d
@@ -48,16 +45,16 @@ CC = clang $(CFLAGS) -I$(INC)
 CC_D = clang $(CFLAGS_D) -I$(INC)
 RM = /bin/rm -f
 
-all: $(TARGET_D) $(TARGET)
+all: $(NAME_D) $(NAME)
 
-debug: $(TARGET_D)
-release: $(TARGET)
+debug: $(NAME_D)
+release: $(NAME)
 
-$(TARGET): $(OBJS) $(LIBFT_LIB)
+$(NAME): $(OBJS) $(LIBFT_LIB)
 	@printf "\r\033[KLinking $@\n"
 	@$(AR) $@ $^
 
-$(TARGET_D): $(OBJS_D) $(LIBFT_LIB_D)
+$(NAME_D): $(OBJS_D) $(LIBFT_LIB_D)
 	@printf "\r\033[KLinking $@\n"
 	@$(AR) $@ $^
 
@@ -80,8 +77,8 @@ clean:
 	@$(RM) $(OBJS_D)
 
 fclean : clean
-	@$(RM) $(TARGET)
-	@$(RM) $(TARGET_D)
+	@$(RM) $(NAME)
+	@$(RM) $(NAME_D)
 
 re: fclean all
 
