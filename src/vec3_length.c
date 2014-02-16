@@ -6,7 +6,7 @@
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/13 07:05:45 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/13 07:17:14 by mwelsch          ###   ########.fr       */
+/*   Updated: 2014/02/16 12:17:02 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libmath.h"
@@ -14,5 +14,5 @@
 
 t_real					vec3_length(t_vec3 v)
 {
-	return (sqrt(v.x * v.x + v.y * v.y + v.z * v.z));
+	return (ft_sqrt(v.x * v.x + v.y * v.y + v.z * v.z));
 }
