@@ -6,7 +6,7 @@
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/16 11:21:54 by mwelsch           #+#    #+#             */
-/*   Updated: 2014/02/16 14:11:01 by mwelsch          ###   ########.fr       */
+/*   Updated: 2014/02/19 13:10:04 by mwelsch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBMATH_VEC3_H
@@ -35,5 +35,11 @@ t_vec3					vec3_div(t_vec3 a, t_vec3 b);
 t_vec3					vec3_mod(t_vec3 a, t_vec3 b);
 t_vec3					vec3_sub(t_vec3 a, t_vec3 b);
 t_vec3					vec3_add(t_vec3 a, t_vec3 b);
+
+t_vec3					vec3_zero();
+t_vec3					vec3_unit_x();
+t_vec3					vec3_unit_y();
+t_vec3					vec3_unit_z();
+t_vec3					vec3_unit_scale();
 
 #endif /* !LIBMATH_H */
